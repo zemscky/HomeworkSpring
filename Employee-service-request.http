@@ -30,7 +30,7 @@ Content-Type: application/json
   "firstName": "Test2",
   "lastName": "Test2",
   "department": 3,
-  "salary": 2000
+  "salary": 1000
 }
 
 ### Получение суммы зарплат сотрудников

@@ -34,7 +34,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/salary/min")
-    public Collection<Employee> getSalaryMin(){
+    public Employee getSalaryMin(){
         return this.employeeService.getSalaryMin();
     }
 

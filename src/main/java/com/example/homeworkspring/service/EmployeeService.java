@@ -36,12 +36,12 @@ public class EmployeeService {
                 .sum();
     }
 
-    public Collection<Employee> getSalaryMin() {
-        return Collections.singleton(employees
+    public Employee getSalaryMin() {
+        return employees
                 .values()
                 .stream()
                 .min(Comparator.comparing(Employee::getSalary))
-                .orElseThrow(NoSuchElementException::new));
+                .orElseThrow(NoSuchElementException::new);
     }
 
     public Employee getSalaryMax() {
