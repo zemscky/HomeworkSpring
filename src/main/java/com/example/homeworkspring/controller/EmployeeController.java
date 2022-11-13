@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
-import java.util.OptionalInt;
 
 @RestController
 public class EmployeeController {
@@ -35,12 +34,12 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/salary/min")
-    public OptionalInt getSalaryMin(){
+    public Collection<Employee> getSalaryMin(){
         return this.employeeService.getSalaryMin();
     }
 
     @GetMapping("/employee/salary/max")
-    public OptionalInt getSalaryMax(){
+    public Employee getSalaryMax(){
         return this.employeeService.getSalaryMax();
     }
 

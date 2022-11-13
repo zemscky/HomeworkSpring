@@ -4,10 +4,7 @@ import com.example.homeworkspring.model.Employee;
 import com.example.homeworkspring.record.EmployeeRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.OptionalInt;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -39,23 +36,32 @@ public class EmployeeService {
                 .sum();
     }
 
-    public OptionalInt getSalaryMin() {
-        return employees.values().stream()
-                .mapToInt(Employee::getSalary)
-                .min();
+    public Collection<Employee> getSalaryMin() {
+        return Collections.singleton(employees
+                .values()
+                .stream()
+                .min(Comparator.comparing(Employee::getSalary))
+                .orElseThrow(NoSuchElementException::new));
     }
 
-    public OptionalInt getSalaryMax() {
-        return employees.values().stream()
-                .mapToInt(Employee::getSalary)
-                .max();
+    public Employee getSalaryMax() {
+        return employees
+                .values()
+                .stream()
+                .max(Comparator.comparing(Employee::getSalary))
+                .orElseThrow(NoSuchElementException::new);
     }
 
     public Collection<Employee> getSalaryMoreThanAverage() {
-        double average = employees.values().stream()
+        double average = employees.values()
+                .stream()
                 .mapToInt(Employee::getSalary)
-                .average().getAsDouble();
-        return employees.values().stream()
-                .filter(employee -> employee.getSalary() > average).collect(Collectors.toList());
+                .average()
+                .getAsDouble();
+        return employees
+                .values()
+                .stream()
+                .filter(employee -> employee.getSalary() > average)
+                .collect(Collectors.toList());
     }
 }
