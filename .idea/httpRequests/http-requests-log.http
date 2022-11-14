@@ -2,6 +2,82 @@ POST http://localhost:8080/employees
 Content-Type: application/json
 
 {
+  "firstName": "kirill",
+  "lastName": "kaznacheev",
+  "department": 1,
+  "salary": 1000
+}
+
+<> 2022-11-14T215524.200.json
+
+###
+
+GET http://localhost:8080/employees
+
+<> 2022-11-14T215434.200.json
+
+###
+
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "firstName": "Andrei",
+  "lastName": "Stepanov",
+  "department": 3,
+  "salary": 1000
+}
+
+<> 2022-11-14T215429.200.json
+
+###
+
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "firstName": "Anton",
+  "lastName": "Savin",
+  "department": 2,
+  "salary": 3000
+}
+
+<> 2022-11-14T215427.200.json
+
+###
+
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "firstName": "kirill",
+  "lastName": "kaznacheev",
+  "department": 1,
+  "salary": 1000
+}
+
+<> 2022-11-14T215421.200.json
+
+###
+
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "firstName": "kirill",
+  "lastName": "kaznacheev",
+  "department": 1,
+  "salary": 1000
+}
+
+<> 2022-11-14T215344.200.json
+
+###
+
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
   "firstName": "Kirill",
   "lastName": "Kaznacheev",
   "department": 1,
@@ -435,66 +511,6 @@ Content-Type: application/json
 }
 
 <> 2022-11-13T234357.200.json
-
-###
-
-POST http://localhost:8080/employees
-Content-Type: application/json
-
-{
-  "firstName": "Test",
-  "lastName": "Test",
-  "department": 1,
-  "salary": 1000
-}
-
-<> 2022-11-13T234354.200.json
-
-###
-
-GET http://localhost:8080/employee/salary/min
-
-<> 2022-11-13T233513.200.json
-
-###
-
-GET http://localhost:8080/employee/salary/sum
-
-<> 2022-11-13T233510.200.json
-
-###
-
-GET http://localhost:8080/employees
-
-<> 2022-11-13T233507.200.json
-
-###
-
-POST http://localhost:8080/employees
-Content-Type: application/json
-
-{
-  "firstName": "Test2",
-  "lastName": "Test2",
-  "department": 3,
-  "salary": 1000
-}
-
-<> 2022-11-13T233505.200.json
-
-###
-
-POST http://localhost:8080/employees
-Content-Type: application/json
-
-{
-  "firstName": "Test1",
-  "lastName": "Test1",
-  "department": 2,
-  "salary": 3000
-}
-
-<> 2022-11-13T233503.200.json
 
 ###
 

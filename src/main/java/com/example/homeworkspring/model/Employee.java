@@ -25,8 +25,6 @@ public class Employee {
             throw new RuntimeException("Status 400 Bad Request");
         }
 
-        this.firstName = firstName;
-        this.lastName = lastName;
         this.department = department;
         this.salary = salary;
 

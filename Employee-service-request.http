@@ -5,8 +5,8 @@ POST http://localhost:8080/employees
 Content-Type: application/json
 
 {
-  "firstName": "Kirill",
-  "lastName": "Kaznacheev",
+  "firstName": "kirill",
+  "lastName": "kaznacheev",
   "department": 1,
   "salary": 1000
 }
