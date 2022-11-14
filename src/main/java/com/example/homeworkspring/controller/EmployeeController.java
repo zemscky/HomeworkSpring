@@ -1,7 +1,6 @@
 package com.example.homeworkspring.controller;
 
 import com.example.homeworkspring.model.Employee;
-import com.example.homeworkspring.record.EmployeeRequest;
 import com.example.homeworkspring.service.EmployeeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,8 +23,8 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee(@RequestBody EmployeeRequest employeeRequest){
-        return this.employeeService.addEmployee(employeeRequest);
+    public Employee createEmployee(@RequestBody Employee employee){
+        return this.employeeService.addEmployee(employee);
     }
 
     @GetMapping("/employee/salary/sum")

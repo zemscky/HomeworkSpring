@@ -1,7 +1,6 @@
 package com.example.homeworkspring.service;
 
 import com.example.homeworkspring.model.Employee;
-import com.example.homeworkspring.record.EmployeeRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -15,16 +14,11 @@ public class EmployeeService {
         return this.employees.values();
     }
 
-    public Employee addEmployee(EmployeeRequest employeeRequest){
-        if(employeeRequest.getFirstName() == null
-                || employeeRequest.getLastName() == null){
+    public Employee addEmployee(Employee employee){
+        if(employee.getFirstName() == null
+                || employee.getLastName() == null){
             throw new IllegalArgumentException("Employee name should be set");
         }
-        Employee employee = new Employee(
-                employeeRequest.getFirstName(),
-                employeeRequest.getLastName(),
-                employeeRequest.getDepartment(),
-                employeeRequest.getSalary());
 
         this.employees.put(employee.getId(),employee);
         return employee;
