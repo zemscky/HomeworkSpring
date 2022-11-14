@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Employee {
     private static int counter;
-    private final int id;
-    private final String firstName;
-    private final String lastName;
-    private final int department;
-    private final int salary;
+    private int id;
+    private String firstName;
+    private String lastName;
+    private int department;
+    private int salary;
 
     public Employee(String firstName, String lastName, int department, int salary) {
         this.firstName = firstName;
@@ -18,7 +18,6 @@ public class Employee {
 
         this.id = counter++;
     }
-
 
     public int getId() {
         return id;
@@ -38,6 +37,26 @@ public class Employee {
 
     public int getSalary() {
         return salary;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setDepartment(int department) {
+        this.department = department;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
     @Override
