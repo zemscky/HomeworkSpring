@@ -1,5 +1,7 @@
 package com.example.homeworkspring.model;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Objects;
 
 public class Employee {
@@ -11,6 +13,18 @@ public class Employee {
     private int salary;
 
     public Employee(String firstName, String lastName, int department, int salary) {
+
+        if (StringUtils.isAlpha(firstName)) {
+            this.firstName = StringUtils.capitalize(firstName);
+        } else {
+            throw new RuntimeException("Status 400 Bad Request");
+        }
+        if (StringUtils.isAlpha(lastName)) {
+            this.lastName = StringUtils.capitalize(lastName);
+        } else {
+            throw new RuntimeException("Status 400 Bad Request");
+        }
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
