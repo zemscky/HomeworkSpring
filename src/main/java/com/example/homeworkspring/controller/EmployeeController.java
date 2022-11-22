@@ -29,21 +29,22 @@ public class EmployeeController {
 
     @GetMapping("/employee/salary/sum")
     public int getSalarySum(){
-        return this.employeeService.getSalarySum();
+        return employeeService.getSalarySum();
     }
 
     @GetMapping("/employee/salary/min")
-    public Collection<Employee> getSalaryMin(){
-        return this.employeeService.getSalaryMin();
+    public Employee getSalaryMin(){
+        return employeeService.getSalaryMin();
     }
 
     @GetMapping("/employee/salary/max")
-    public Collection<Employee> getSalaryMax(){
-        return this.employeeService.getSalaryMax();
+    public Employee getSalaryMax(){
+        return employeeService.getSalaryMax();
     }
 
     @GetMapping("/employee/high-salary")
-    public Collection<Employee> getSalaryMoreThanAverage() {
-        return this.employeeService.getSalaryMoreThanAverage();
+    public Collection<Employee> getHighSalaryEmployees(){
+        return employeeService.getHighSalaryEmployees();
     }
 }
+

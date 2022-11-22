@@ -1,6 +1,7 @@
 package com.example.homeworkspring.service;
 
 import com.example.homeworkspring.model.Employee;
+import exception.EmployeeNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -24,50 +25,46 @@ public class EmployeeService {
         return employee;
     }
 
-    public int getSalarySum() {
-        return employees.values().stream()
+    public int getSalarySum(){
+        return employees.values()
+                .stream()
                 .mapToInt(Employee::getSalary)
                 .sum();
     }
 
-    public Collection<Employee> getSalaryMin() {
-        double minBySalary = employees
-                .values()
-                .stream()
-                .mapToInt(Employee::getSalary)
-                .min()
-                .getAsInt();
+    public Employee getSalaryMin() {
         return employees
                 .values()
                 .stream()
-                .filter(e -> e.getSalary() == minBySalary)
-                .toList();
+                .min(Comparator.comparingInt(Employee::getSalary))
+                .orElseThrow(EmployeeNotFoundException :: new);
     }
 
-    public Collection<Employee> getSalaryMax() {
-        double maxBySalary = employees
-                .values()
-                .stream()
-                .mapToInt(Employee::getSalary)
-                .max()
-                .getAsInt();
+    public Employee getSalaryMax() {
         return employees
                 .values()
                 .stream()
-                .filter(e -> e.getSalary() == maxBySalary)
-                .toList();
+                .max(Comparator.comparingInt(Employee::getSalary))
+                .orElseThrow(EmployeeNotFoundException :: new);
     }
 
-    public Collection<Employee> getSalaryMoreThanAverage() {
-        double average = employees.values()
-                .stream()
+    public double getSalaryAverage(){
+        return employees.values().stream()
                 .mapToInt(Employee::getSalary)
                 .average()
-                .getAsDouble();
-        return employees
-                .values()
-                .stream()
-                .filter(employee -> employee.getSalary() > average)
+                .orElseThrow(EmployeeNotFoundException :: new);
+    }
+
+    public Collection<Employee> getHighSalaryEmployees(){
+        Double averageSalary = getSalaryAverage();
+
+        return employees.values().stream()
+                .filter(e-> e.getSalary() >= averageSalary)
                 .collect(Collectors.toList());
+
+    }
+
+    public void deleteEmployee(int id){
+        employees.remove(id);
     }
 }
